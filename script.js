@@ -11,6 +11,7 @@ const exec = () => {
     const daysOfWeek = document.querySelectorAll('.day')
     const forecastImage = document.querySelectorAll('.forecast-image')
     const temp = document.querySelectorAll('.temp')
+    const pR = document.getElementById('paragraph-right')
 
     const openWeatherKey = 'a6658eef49c27518d779e18d06d94340'
     const countrySearch = new Intl.DisplayNames(['en'], {type: 'region'})
@@ -50,6 +51,8 @@ const exec = () => {
 
     async function getPromisses(lat, lon) {
         try {
+            pR.innerHTML += `<p>Latitude: ${lat}</p><p>longitude: ${lon}</p>`
+
             let dataCurrentWeather = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${openWeatherKey}`)
 
             dataCurrentWeather = await dataCurrentWeather.json()
