@@ -86,7 +86,7 @@ const exec = () => {
             })
         }
         catch {
-            alert('Error 404, refresh please')
+            alert('Error 404, refresh please') //comentário aqui
         }
     }
 }
