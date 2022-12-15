@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const exec = () => {
     const title = document.getElementById('title')
     const imageCurrentWeather = document.getElementById('image-current-weather')
@@ -12,7 +14,7 @@ const exec = () => {
     const forecastImage = document.querySelectorAll('.forecast-image')
     const temp = document.querySelectorAll('.temp')
 
-    const openWeatherKey = 'a6658eef49c27518d779e18d06d94340'
+    const openWeatherKey = process.env.API_KEY
     const countrySearch = new Intl.DisplayNames(['en'], {type: 'region'})
 
     const currentDate = new Date()
