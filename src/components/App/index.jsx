@@ -26,7 +26,7 @@ export const App = () => {
     if (position) {
       const {lat, lon} = position
       const exec = async () => {
-        const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`)
+        const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`)
         const resolveData = await data.json()
         setCurrentWeather(resolveData)
       }
@@ -35,8 +35,8 @@ export const App = () => {
   }, [position, setCurrentWeather])
 
   return (
-    <div>
+    <section className='main-container'>
       { currentWeather ? <Content /> : <p>Loading...</p>}
-    </div>
+    </section>
   )
 }

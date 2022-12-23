@@ -1,12 +1,12 @@
-import { useContext } from "react"
-import { CurrentWeatherProvider } from "../../contexts/CurrentWeatherContext"
+import { Details } from "./Details"
+import { Title } from "./Title"
 
-export const Content = () => {
-  const {currentWeather} = useContext(CurrentWeatherProvider) 
+export const Content = () => { 
 
   return (
-    <div>
-      {currentWeather.name} 
+    <div className="content-container">
+      <Title />
+      <Details />
     </div>
   )
 }
