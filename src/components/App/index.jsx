@@ -10,8 +10,6 @@ export const App = () => {
   
   const [ position, setPosition ] = useState(null)
   const [ error, setError ] = useState(false)
-  const [counter, setCounter] = useState(0)
-
 
   useEffect(() => { 
     const success = (position) => {
@@ -36,14 +34,13 @@ export const App = () => {
         try {
           const currentWeatherData = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`)
 
-          const forecastData = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}`)
+          const forecastData = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=metric`)
   
           const resolveCurrentWeatherData = await currentWeatherData.json()
           const resolveForecastData = await forecastData.json()
   
           setCurrentWeather(resolveCurrentWeatherData)
           setForecast(resolveForecastData)
-          setCounter((counter) => counter + 1)
         }
         catch(e) {
           console.log(e)
@@ -52,10 +49,7 @@ export const App = () => {
       }
       exec()
     }
-  }, [position, setCurrentWeather, setForecast, setCounter])
-
-  console.log(forecast)
-  console.log(currentWeather)
+  }, [position, setCurrentWeather, setForecast])
 
   if (error) {
     return (
@@ -67,7 +61,6 @@ export const App = () => {
   }
   return (
     <section className='main-container'>
-      <h1>{counter}</h1>
       { currentWeather && forecast ? <Content /> : <p>Loading...</p>}
     </section>
   )

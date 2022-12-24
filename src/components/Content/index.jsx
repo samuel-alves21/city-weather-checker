@@ -1,4 +1,5 @@
 import { Details } from "./Details"
+import { Forecast } from "./Forecast"
 import { Title } from "./Title"
 
 export const Content = () => { 
@@ -7,6 +8,7 @@ export const Content = () => {
     <div className="content-container">
       <Title />
       <Details />
+      <Forecast />
     </div>
   )
 }
