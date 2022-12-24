@@ -1,11 +1,11 @@
 import { getDate } from "./functions/getDate"
 import { useContext } from "react"
-import { CurrentWeatherProvider } from "../../../contexts/CurrentWeatherContext"
+import { CurrentWeatherContext } from "../../../contexts/CurrentWeatherContext"
 
 export const Details = () => {
 
   const [day, month, dayOfMonth, year] = getDate()
-  const { currentWeather } = useContext(CurrentWeatherProvider)
+  const { currentWeather } = useContext(CurrentWeatherContext)
   const { main, description } = currentWeather.weather[0]
   const { temp_max, temp_min } = currentWeather.main
 

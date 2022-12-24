@@ -1,15 +1,15 @@
 import { useState } from "react"
 import { createContext } from 'react'
 
-export const CurrentWeatherProvider = createContext()
+export const CurrentWeatherContext = createContext()
 
-export const CurrentWeatherContext = ({children}) => {
+export const CurrentWeatherProvider = ({children}) => {
 
   const [currentWeather, setCurrentWeather] = useState(null)
 
   return (
-    <CurrentWeatherProvider.Provider value={{ currentWeather, setCurrentWeather, }}>
+    <CurrentWeatherContext.Provider value={{ currentWeather, setCurrentWeather, }}>
       {children}
-    </CurrentWeatherProvider.Provider>
+    </CurrentWeatherContext.Provider>
   )
 }
