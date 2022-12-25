@@ -17,8 +17,8 @@ export const Details = () => {
       <h2 className="title-description">{main}, {description}</h2>
       <h2 className="main-temp">{temp}&#x2103;</h2>
       <section className="temp-section">
-        <h4>{temp_min}</h4>
-        <h4>{temp_max}</h4>
+        <h4>{temp_min}&#x2103;</h4>
+        <h4>{temp_max}&#x2103;</h4>
       </section>
     </section>
 

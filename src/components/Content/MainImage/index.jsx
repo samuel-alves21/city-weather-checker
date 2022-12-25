@@ -5,7 +5,7 @@ import './styles.css'
 
 export const MainImage = () => {
 
-  const { currentWeather, setCurrentWeather } = useContext(CurrentWeatherContext)
+  const { currentWeather } = useContext(CurrentWeatherContext)
 
   return (
     <div className="div-img">
