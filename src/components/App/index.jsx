@@ -59,6 +59,9 @@ export const App = () => {
       </div>
     )
   }
+
+  console.log(currentWeather)
+
   return (
     <section className='main-container'>
       { currentWeather && forecast ? <Content /> : <p>Loading...</p>}

@@ -2,21 +2,26 @@ import { getDate } from "../../../functions/getDate"
 import { useContext } from "react"
 import { CurrentWeatherContext } from "../../../contexts/CurrentWeatherContext"
 
+import './styles.css'
+
 export const Details = () => {
 
   const [day, month, dayOfMonth, year] = getDate()
   const { currentWeather } = useContext(CurrentWeatherContext)
   const { main, description } = currentWeather.weather[0]
-  const { temp_max, temp_min } = currentWeather.main
+  const { temp_max, temp_min, temp } = currentWeather.main
 
   return (
-    <>
-    <p>Details here...  {day}, {month} {dayOfMonth}, {year}</p>
-    <p>{main}, {description}</p>
-    <div style={{'display': 'flex', 'width': '300px', 'justifyContent': 'space-between'}}>
-      <p>Max: {temp_max}℃</p>
-      <p>Min: {temp_min}℃</p>
-    </div>
-    </>
+    <section className="section-details">
+      <p>{day}, {month} {dayOfMonth}, {year}</p>
+      <h2 className="title-description">{main}, {description}</h2>
+      <h2 className="main-temp">{temp}&#x2103;</h2>
+      <section className="temp-section">
+        <h4>{temp_min}</h4>
+        <h4>{temp_max}</h4>
+      </section>
+    </section>
+
+    
   )
 }

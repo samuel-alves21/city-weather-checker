@@ -1,0 +1,20 @@
+section.section-details > p {
+  margin-bottom: 15px;
+}
+
+.title-description {
+  margin-bottom: 30px;
+}
+
+.main-temp {
+  margin-bottom: 10px;
+}
+
+section.temp-section {
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 70px;
+}

@@ -3,6 +3,8 @@ import { ForecastContext } from "../../../contexts/ForecastContext"
 import { getForecastDays } from "../../../functions/getForecastDays"
 import { Days } from "../Days"
 
+import './styles.css'
+
 export const Forecast = () => {
 
   const { forecast } = useContext(ForecastContext)
@@ -11,8 +13,8 @@ export const Forecast = () => {
   console.log(forecastDays)
 
   return (
-    <div style={{'display': 'flex', 'justifyContent':  'space-evenly', 'textAlign': 'center'}}>
+    <section className="forecast-section">
       {forecastDays.map((day, index) => <Days key={index} day={day} />)}
-    </div>
+    </section>
   )
 }
