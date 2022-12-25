@@ -23,7 +23,7 @@ export const App = () => {
       setError(true)
     }
 
-    navigator.geolocation.getCurrentPosition(success, error)
+    navigator.geolocation.watchPosition(success, error)
   }, [ setPosition ])
 
   useEffect(() => {
