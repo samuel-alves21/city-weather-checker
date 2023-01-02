@@ -1,5 +1,5 @@
-import { timeConverter } from "../../../functions/timeConverter"
-import { days } from "../../../data"
+import { timeConverter } from '../../../../functions/timeConverter'
+import { days } from '../../../../data/date'
 
 import './styles.css'
 
