@@ -4,11 +4,12 @@ import { CurrentWeatherContext } from '../../contexts/CurrentWeatherContext'
 import { ForecastContext } from '../../contexts/ForecastContext'
 import { useFetchData } from '../../hooks/useFetchData'
 import { key } from '../../data/apiKey'
-import { useLocation } from 'react-router-dom'
-import { Error } from '../../components/Content/Error'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useFetchQueryPosition } from '../../hooks/useFetchQueryPosition'
 
 export const CitySearchPage = () => {
+  const navigate = useNavigate()
+
   const { currentWeather, setCurrentWeather } = useContext(CurrentWeatherContext)
   const { forecast, setForecast } = useContext(ForecastContext)
   
@@ -21,7 +22,9 @@ export const CitySearchPage = () => {
 
   useFetchData(position, setCurrentWeather, setForecast, setError, key)
 
-  if (error) return <Error />
+  if (error) {
+    navigate('/error')
+  }
 
   return (
     <section className='main-container'>

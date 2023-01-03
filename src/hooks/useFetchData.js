@@ -2,27 +2,32 @@ import { useEffect } from "react"
 
 export const useFetchData = (position, setCurrentWeather, setForecast, setError, key) => {
   useEffect(() => {
-    if (position) {
-      const {lat, lon} = position
-
-      const exec = async () => {
-        try {
-          const currentWeatherData = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`)
-
-          const forecastData = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=metric`)
+    if (position === 'undefined') {
+      
+    }
+    else {
+      if (position) {
+        const {lat, lon} = position
   
-          const resolveCurrentWeatherData = await currentWeatherData.json()
-          const resolveForecastData = await forecastData.json()
+        const exec = async () => {
+          try {
+            const currentWeatherData = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`)
   
-          setCurrentWeather(resolveCurrentWeatherData)
-          setForecast(resolveForecastData)
+            const forecastData = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=metric`)
+    
+            const resolveCurrentWeatherData = await currentWeatherData.json()
+            const resolveForecastData = await forecastData.json()
+    
+            setCurrentWeather(resolveCurrentWeatherData)
+            setForecast(resolveForecastData)
+          }
+          catch(e) {
+            console.log(e)
+            setError(true)
+          }
         }
-        catch(e) {
-          console.log(e)
-          setError(true)
-        }
+        exec()
       }
-      exec()
     }
   }, [position, setCurrentWeather, setError, setForecast, key])
 }

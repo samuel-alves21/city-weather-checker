@@ -8,7 +8,6 @@ export const useFetchQueryPosition = (state, setPosition, key, setError) => {
         const resolvedData = await data.json()
         const { lat, lon } = resolvedData[0]
   
-        console.log(resolvedData)
         setPosition({ lat, lon })
       } 
       catch(e) {
@@ -17,5 +16,5 @@ export const useFetchQueryPosition = (state, setPosition, key, setError) => {
       }
   }
     exec()
-  }, [state, setError, key, setPosition,])
+  }, [state, setError, key, setPosition])
 }
