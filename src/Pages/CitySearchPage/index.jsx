@@ -1,11 +1,16 @@
 import { useContext, useState } from 'react'
-import { Content } from '../../components/Content'
 import { CurrentWeatherContext } from '../../contexts/CurrentWeatherContext'
 import { ForecastContext } from '../../contexts/ForecastContext'
 import { useFetchData } from '../../hooks/useFetchData'
 import { key } from '../../data/apiKey'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useFetchQueryPosition } from '../../hooks/useFetchQueryPosition'
+
+import { Title } from '../../components/Title'
+import { MainImage } from '../../components/MainImage'
+import { Details } from '../../components/Details'
+import { Forecast } from '../../components/Forecast'
+import { Nav } from  '../../components/Nav'
 
 export const CitySearchPage = () => {
   const navigate = useNavigate()
@@ -28,7 +33,14 @@ export const CitySearchPage = () => {
 
   return (
     <section className='main-container'>
-      { currentWeather && forecast ? <Content /> : <p>Loading...</p>}
+      { !currentWeather && !forecast ? <p>Loading...</p> : 
+      <section>
+        <Nav />
+        <Title />
+        <MainImage />
+        <Details />
+        <Forecast />
+      </section> }
     </section>
   )
 }
