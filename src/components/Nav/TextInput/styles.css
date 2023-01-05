@@ -1,0 +1,47 @@
+.input-container {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.input-container--focus {
+  border: 1.5px solid #8c8c8e;
+}
+
+.input-container * {
+  height: 30px;
+}
+
+.input-container input {
+  font-size: 18px;
+  flex-grow: 1;
+  padding: 4px;
+  outline: none;
+  border: none;
+  border-radius: 2px 0 0 2px;
+}
+
+.input-container button {
+  font-size: 17px;
+  color: white;
+  background-color: #8c8c8e;
+  padding: 5px;
+  border: none;
+  border-radius: 0 2px 2px 0
+}
+
+.input-container button:hover {
+  background-color: #bebebe;
+  cursor: pointer;
+}
+
+.input-container span {
+  background-color: white;
+  padding: 4px;
+  padding-right: 5px;
+  color: rgb(224, 85, 20);
+}
+
+.input-container span:hover {
+  cursor: pointer;
+}

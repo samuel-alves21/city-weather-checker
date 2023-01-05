@@ -1,0 +1,38 @@
+.div-days h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #e05514;
+}
+
+.div-img-forecast {
+  width: calc(4vw + 80px);
+}
+
+.div-img-forecast img {
+  width: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 700px) {
+  .div-img-forecast {
+    margin: 0 auto;
+  }
+
+  .div-days {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    min-width: 270px;
+    width: 60vw;
+  }
+
+  .div-days--description {
+    margin-left: 10px;
+  }
+
+  .left-details {
+    width: 100px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

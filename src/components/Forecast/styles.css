@@ -1,0 +1,25 @@
+section.forecast-section {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+section.forecast-section::after {
+  position: absolute;
+  content: '';
+  height: 2px;
+  background-color: #e05514;
+  width: 40%;
+  top: -35px;
+  left: 30%;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  section.forecast-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+}

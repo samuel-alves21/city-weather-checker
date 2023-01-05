@@ -1,0 +1,9 @@
+div.div-img {
+  width: calc(1.5vw + 135px);
+  margin: 0 auto;
+}
+
+div.div-img img {
+  object-fit: cover;
+  width: 100%;
+}
