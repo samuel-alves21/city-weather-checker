@@ -24,5 +24,5 @@ export const useFetchQueryPosition = (state, setPosition, key, setError, setNotF
       }
     }
     exec()
-  }, [state, setError, key, setPosition])
+  }, [state, setError, key, setPosition, setNotFound])
 }

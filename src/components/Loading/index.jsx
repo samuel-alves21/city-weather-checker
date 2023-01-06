@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { NotFound } from '../NotFound'
 import { Nav } from '../Nav'
 

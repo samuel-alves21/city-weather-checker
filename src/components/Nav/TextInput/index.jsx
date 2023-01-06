@@ -15,7 +15,7 @@ export const TextInput = () => {
   
   const input = useRef(null)
 
-  const { currentWeather ,setCurrentWeather } = useContext(CurrentWeatherContext)
+  const { setCurrentWeather } = useContext(CurrentWeatherContext)
   const { setForecast } = useContext(ForecastContext)
   
 
