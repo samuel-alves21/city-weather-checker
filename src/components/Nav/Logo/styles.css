@@ -1,8 +1,19 @@
-.logo {
-  color: white;
-}
-
 .link-home {
   text-decoration: none;
   margin: auto 0;
+}
+
+.div-logo {
+  width: 50px;
+}
+
+.div-logo img {
+  width: 100%;
+  object-fit: contain;
+  transition: scale 0.2s;
+}
+
+.div-logo img:hover {
+  transition: scale 0.2s;
+  transform: scale(1.1);
 }

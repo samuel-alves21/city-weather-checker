@@ -20,7 +20,6 @@ export const TextInput = () => {
   
 
   const handleclick = () => {
-    if (currentWeather.name.toLowerCase() === inputValue.toLowerCase()) return
     if (!inputValue) return
     setCurrentWeather(null)
     setForecast(null)
@@ -63,7 +62,7 @@ export const TextInput = () => {
         onBlur={handleBlur}
       />
       <span onClick={cleanInput} className="remove-text">X</span>
-      <button type="submit" onClick={handleclick}><SearchIcon /></button>
+      <button type="submit" onClick={handleclick}><SearchIcon className="search-icon" /></button>
     </section>
   )
 }

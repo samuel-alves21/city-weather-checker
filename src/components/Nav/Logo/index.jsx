@@ -1,10 +1,13 @@
-import { Link } from 'react-router-dom'
+import logo from '../../../img/weather-app-logo.png'
+
 import './styles.css'
 
 export const Logo = () => {
   return (
-    <Link to='/' className='link-home'>
-      <h3 className="logo">Weather App</h3>
-    </Link>
+    <div className='div-logo'>
+      <a href='/' className='link-home'>
+        <img src={logo} alt="logo" />
+      </a>
+    </div>
   )
 }

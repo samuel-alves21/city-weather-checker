@@ -11,6 +11,7 @@ import { MainImage } from '../../components/MainImage'
 import { Details } from '../../components/Details'
 import { Forecast } from '../../components/Forecast'
 import { Nav } from  '../../components/Nav'
+import { Loading } from '../../components/Loading'
 
 export const Home = () => {
   const navigate = useNavigate()
@@ -32,7 +33,7 @@ export const Home = () => {
   return (
     <section className='home'>
       { !currentWeather && !forecast ? 
-      <p>Loading...</p> :
+      <Loading /> :
       <section className='home-content'>
         <Nav />
         <Title />

@@ -1,0 +1,21 @@
+.error-page {
+  margin-top: 50px;
+  width: 70vw;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.error-page h1 {
+  margin-bottom: calc(0.5vw + 10px);
+  font-size: calc(1vw + 30px);
+  color: #ff703d;
+}
+
+.error-page p {
+  margin-bottom: calc(0.5vw + 20px);
+  font-size: calc(1vw + 15px);
+}
+
+.emoji {
+  color: #ff703d;
+}

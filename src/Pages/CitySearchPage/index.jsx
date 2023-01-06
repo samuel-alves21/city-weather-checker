@@ -11,6 +11,8 @@ import { MainImage } from '../../components/MainImage'
 import { Details } from '../../components/Details'
 import { Forecast } from '../../components/Forecast'
 import { Nav } from  '../../components/Nav'
+import { NotFound } from '../../components/NotFound'
+import { Loading } from '../../components/Loading'
 
 export const CitySearchPage = () => {
   const navigate = useNavigate()
@@ -20,10 +22,11 @@ export const CitySearchPage = () => {
   
   const [ position, setPosition ] = useState(null)
   const [ error, setError ] = useState(false)
+  const [ notFound, setNotFound ] = useState(false)
 
   const { state } = useLocation()
 
-  useFetchQueryPosition(state, setPosition, key, setError)
+  useFetchQueryPosition(state, setPosition, key, setError, setNotFound)
 
   useFetchData(position, setCurrentWeather, setForecast, setError, key)
 
@@ -33,13 +36,20 @@ export const CitySearchPage = () => {
 
   return (
     <section className='main-container'>
-      { !currentWeather && !forecast ? <p>Loading...</p> : 
+      { !currentWeather && !forecast ? <Loading /> : 
       <section>
-        <Nav />
-        <Title />
-        <MainImage />
-        <Details />
-        <Forecast />
+        { notFound ? 
+        <>
+          <Nav />
+          <NotFound />
+        </> : 
+        <>
+          <Nav />
+          <Title />
+          <MainImage />
+          <Details />
+          <Forecast />
+        </> }
       </section> }
     </section>
   )

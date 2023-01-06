@@ -2,14 +2,19 @@ import { TextInput } from "./TextInput"
 import { Logo } from "./Logo"
 import { Links } from "./Links"
 
+import { useMediaQuery } from "react-responsive"
+
 import './styles.css'
 
 export const Nav = () => {
+  const midScreen = useMediaQuery({ query: '(max-width: 750px)' })
+  const smallScreen = useMediaQuery({ query: '(max-width: 450px)' })
+
   return (
     <nav className="nav">
-      <Logo />
+      {!smallScreen && <Logo />}
       <TextInput />
-      <Links />
+      {!midScreen && <Links />}
     </nav>
   )
 }

@@ -1,23 +1,54 @@
 .div-links ul {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 20px;
-}
-.div-links ul li a {
   text-decoration: none;
-  border-radius: 30px;
+}
+
+.div-links ul * {
   color: white;
+  text-decoration: none;
 }
 
-.div-links ul li {
-  background-color: #8c8c8e;
-  padding: 5px;
-  flex-grow: 1;
-  width: 125px;
-  border-radius: 10px;
+.icon {
+  font-size: larger;
+  transition: scale 0.2s;
 }
 
-.div-links ul li:hover {
-  background-color: #bebebe;
+.icon:hover {
   cursor: pointer;
+  transform: scale(1.1);
 }
+
+.api-link {
+  position: relative;
+  font-weight: 500;
+}
+
+.api-link::after {
+  position: absolute;
+  content: '';
+  background-color: white;
+  height: 1.25px;
+  width: 100%;
+  top: 110%;
+  left: 0;
+  transform: scale(0);
+  animation: hide_baseline 0.5s forwards cubic-bezier(0.215, 0.610, 0.355, 1)
+}
+
+.api-link:hover::after {
+  animation: show_baseline 0.5s forwards cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+@keyframes show_baseline {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}
+
+@keyframes hide_baseline {
+  from {transform: scale(1);}
+  to {transform: scale(0);}
+}
+

@@ -6,11 +6,12 @@ import { CurrentWeatherProvider } from './contexts/CurrentWeatherContext';
 import { ForecastProvider } from './contexts/ForecastContext';
 import { App } from './App';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CurrentWeatherProvider>
     <ForecastProvider>
-      <App />
+        <App />
     </ForecastProvider>
   </CurrentWeatherProvider>
 );
