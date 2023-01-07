@@ -29,13 +29,15 @@
   }
 
   .div-days--description {
-    margin-left: 10px;
+    margin-left: 20px;
+    width: 145px;
   }
 
   .left-details {
     width: 150px;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
   }
 }
 @media screen and (max-width: 450px) {
