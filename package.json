@@ -1,4 +1,5 @@
-{
+{ 
+  "homepage": "http://samuel-alves21.github.io/weather-app",
   "name": "weather-app",
   "version": "0.1.0",
   "private": true,
@@ -16,7 +17,6 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "http://samuel-alves21.github.io/weather-app",
   "scripts": {
     "predeploy" : "npm run build",
     "deploy" : "gh-pages -d build",
