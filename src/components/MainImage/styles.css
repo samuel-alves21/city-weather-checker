@@ -8,7 +8,13 @@ div.div-img img {
   width: 100%;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 900px) {
+  div.div-img {
+    width: calc(1.5vw + 80px);
+  }
+}
+
+@media screen and (max-height: 700px) {
   div.div-img {
     width: calc(1.5vw + 80px);
   }
