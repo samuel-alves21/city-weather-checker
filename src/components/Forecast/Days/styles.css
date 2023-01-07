@@ -1,11 +1,12 @@
 .div-days h4 {
-  font-size: 20px;
+  font-size: calc(1vw + 12px);
   font-weight: 600;
   color: #e05514;
 }
 
 .div-img-forecast {
-  width: calc(4vw + 80px);
+  width: calc(2vw + 60px);
+  margin: auto;
 }
 
 .div-img-forecast img {
@@ -13,16 +14,17 @@
   object-fit: contain;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .div-img-forecast {
     margin: 0 auto;
+    width: 50px;
   }
 
   .div-days {
     display: flex;
     align-items: center;
     margin: 0 auto;
-    min-width: 270px;
+    min-width: 250px;
     width: 60vw;
   }
 
@@ -31,8 +33,13 @@
   }
 
   .left-details {
-    width: 100px;
+    width: 150px;
     display: flex;
     justify-content: space-evenly;
   }
 }
+@media screen and (max-width: 450px) {
+  .div-days {
+    width: 75vw;
+  }
+} 

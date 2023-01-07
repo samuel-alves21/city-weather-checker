@@ -51,6 +51,12 @@
   font-size: smaller;
 } 
 
+@media screen and (max-width: 750px) {
+  .input-container {
+    margin-left: calc(2vw + 5px);
+  }
+}
+
 @media screen and (max-Width: 450px) {
   .input-container {
    margin: auto;

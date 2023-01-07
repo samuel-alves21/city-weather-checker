@@ -7,3 +7,9 @@ div.div-img img {
   object-fit: cover;
   width: 100%;
 }
+
+@media screen and (max-width: 450px) {
+  div.div-img {
+    width: calc(1.5vw + 80px);
+  }
+}

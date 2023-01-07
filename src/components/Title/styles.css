@@ -1,4 +1,4 @@
 .title {
-  margin-top: 50px;
-  font-size: calc(1vw + 25px);
+  margin-top: calc(1vw + 10px);
+  font-size: calc(1vw + 22px);
 }

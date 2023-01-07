@@ -3,16 +3,19 @@ section.section-details > p {
 }
 
 .title-description {
-  margin-bottom: 30px;
+  margin-bottom: calc(1vw + 20px);
+  font-size: calc(1vw + 16px);
+  color: #e05514;
 }
 
 .date {
-  font-size: calc(0.2vw + 16px);
+  font-size: calc(0.5vw + 12px);
   font-weight: 500;
 }
 
 .main-temp {
   margin-bottom: 10px;
+  font-size: calc(0.5vw + 20px);
 }
 
 section.temp-section {
