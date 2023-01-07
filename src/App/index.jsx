@@ -6,8 +6,8 @@ import { Error } from "../Pages/Error"
 
 export const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Routes basename="/weather-app">
         <Route path="/" element={<Home />}/>
         <Route path="/city/:cityName" element={<CitySearchPage />} />
         <Route path="/error" element={<Error />} />
