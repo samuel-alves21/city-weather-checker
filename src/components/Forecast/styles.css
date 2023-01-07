@@ -7,6 +7,10 @@ section.forecast-section {
   gap: 13px;
 }
 
+section.forecast-section > * {
+  flex-basis: 100px;
+}
+
 section.forecast-section::after {
   position: absolute;
   content: '';
@@ -26,5 +30,9 @@ section.forecast-section::after {
 
   section.forecast-section > * {
     margin-top: 0px;
+  }
+
+  section.forecast-section > * {
+    flex-basis:0;
   }
 }
