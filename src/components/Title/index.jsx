@@ -8,6 +8,10 @@ export const Title = () => {
   const country = new Intl.DisplayNames(['en'], {type: 'region'}).of(currentWeather.sys.country)
 
   return (
-    <h2 className="title">{currentWeather.name}, {country}</h2>
+    <a 
+    href={`https://www.google.com.br/maps/place/${currentWeather.name}`} target="_blank" rel="noreferrer"
+    className="title-link">
+      <h2 className="title">{currentWeather.name}, {country}</h2>
+    </a>
   )
 }

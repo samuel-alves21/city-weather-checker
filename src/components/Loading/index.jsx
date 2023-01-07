@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { NotFound } from '../NotFound'
 import { Nav } from '../Nav'
+import { ColorRing } from 'react-loader-spinner'
+
+import './styles.css'
 
 export const Loading = () => {
   const [ counter, setCounter ] = useState(0)
@@ -22,6 +25,12 @@ export const Loading = () => {
     )
   }
   else {
-    return <p>Loading...</p>
+    return (
+      <div className="loading-container">
+        < ColorRing  
+          colors={['#e05514', '#e05514','#e05514','#e05514','#e05514',]}
+        />
+      </div>
+    )
   }
 }

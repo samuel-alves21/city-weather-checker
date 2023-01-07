@@ -1,4 +1,14 @@
+.title-link {
+  text-decoration: none;
+}
+
 .title {
   margin-top: calc(1vw + 10px);
   font-size: calc(1vw + 22px);
+  color: #48484a;
+  transition: color 0.2s;
+}
+
+.title:hover {
+  color: #e05514;
 }

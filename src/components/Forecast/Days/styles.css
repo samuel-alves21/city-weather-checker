@@ -1,5 +1,5 @@
 .div-days h4 {
-  font-size: calc(1vw + 12px);
+  font-size: calc(0.5vw + 12px);
   font-weight: 600;
   color: #e05514;
 }
@@ -14,7 +14,7 @@
   object-fit: contain;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
   .div-img-forecast {
     margin: 0 auto;
     width: 50px;
