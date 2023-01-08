@@ -1,6 +1,6 @@
 { 
-  "homepage": "http://samuel-alves21.github.io/weather-app",
   "name": "weather-app",
+  "homepage": "http://samuel-alves21.github.io/weather-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
