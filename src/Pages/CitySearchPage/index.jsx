@@ -52,8 +52,8 @@ export const CitySearchPage = () => {
               <Title />
               <MainImage />
               <Details />
-          </section>
-          <Forecast className='forecast-component'/>
+            </section>
+            <Forecast className='forecast-component'/>
           </section>
         </section> }
       </section> }
