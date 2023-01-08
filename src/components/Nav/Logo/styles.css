@@ -17,3 +17,9 @@
   transition: scale 0.2s;
   transform: scale(1.1);
 }
+
+@media screen and (min-device-width: 480px) and (min-device-width: 640px) and (max-width: 768px) {
+  .div-logo {
+    width: 35px;
+  }
+}

@@ -45,3 +45,12 @@
     width: 75vw;
   }
 } 
+
+@media screen and (min-device-width: 480px) and (min-device-width: 640px) and (max-width: 768px) {
+  .div-days {
+    width: 40vw;
+    margin-bottom: -5px;
+    margin-right: 0;
+    margin-left: auto;
+  }
+} 

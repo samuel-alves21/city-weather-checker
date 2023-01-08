@@ -13,3 +13,9 @@
     padding: 0 30px;
   }
 }
+
+@media screen and (min-device-width: 480px) and (min-device-width: 640px) and (max-width: 768px) {
+  .nav {
+    height: 45px;
+  }
+}

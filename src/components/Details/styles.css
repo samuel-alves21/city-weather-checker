@@ -26,3 +26,9 @@ section.temp-section {
   margin-right: auto;
   margin-bottom: 70px;
 }
+
+@media screen and (min-device-width: 480px) and (min-device-width: 640px) and (max-width: 768px) {
+  section.temp-section {
+    margin-bottom: 0;
+  }
+} 

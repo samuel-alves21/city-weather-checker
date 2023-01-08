@@ -36,3 +36,16 @@ section.forecast-section::after {
     flex-basis:0;
   }
 }
+
+@media screen and (min-device-width: 480px) and (min-device-width: 640px) and (max-width: 768px) {
+  section.forecast-section::after {
+    content: none;
+  }
+  section.forecast-section { 
+    flex-grow: 1;
+    gap: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}

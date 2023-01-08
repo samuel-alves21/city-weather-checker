@@ -12,9 +12,16 @@ import { Details } from '../../components/Details'
 import { Forecast } from '../../components/Forecast'
 import { Nav } from  '../../components/Nav'
 import { Loading } from '../../components/Loading'
+import { useMediaQuery } from 'react-responsive'
+
+import './style.css'
 
 export const Home = () => {
   const navigate = useNavigate()
+
+  const minDeviceWidth = useMediaQuery({query: '(min-device-width: 480px)'})
+  const maxDeviceWidth = useMediaQuery({query: '(min-device-width: 640px)'})
+  const middlewidth = useMediaQuery({query: '(max-width: 768px)'})
 
   const { currentWeather, setCurrentWeather } = useContext(CurrentWeatherContext)
   const { forecast, setForecast } = useContext(ForecastContext)
@@ -28,6 +35,29 @@ export const Home = () => {
 
   if (error) {
     navigate('/error')
+  }
+
+  console.log(minDeviceWidth)
+  console.log(maxDeviceWidth)
+
+  if (minDeviceWidth && maxDeviceWidth && middlewidth) {
+    return (
+      <section className='home'>
+      { !currentWeather && !forecast ? 
+      <Loading /> :
+      <section className='home-content'>
+        <Nav />
+        <section className="content-container">
+          <section className='current-weather-section'>
+            <Title />
+            <MainImage />
+            <Details />
+          </section>
+          <Forecast className='forecast-component'/>
+        </section>
+      </section> }
+    </section>
+    )
   }
 
   return (
