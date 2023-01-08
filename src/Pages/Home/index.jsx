@@ -19,9 +19,8 @@ import './style.css'
 export const Home = () => {
   const navigate = useNavigate()
 
-  const minDeviceWidth = useMediaQuery({query: '(min-device-width: 480px)'})
-  const maxDeviceWidth = useMediaQuery({query: '(min-device-width: 640px)'})
-  const middlewidth = useMediaQuery({query: '(max-width: 768px)'})
+  const maxDeviceWidth = useMediaQuery({query: '(max-height: 575.98px)'})
+  const middlewidth = useMediaQuery({query: '(orientation: landscape)'})
 
   const { currentWeather, setCurrentWeather } = useContext(CurrentWeatherContext)
   const { forecast, setForecast } = useContext(ForecastContext)
@@ -37,10 +36,10 @@ export const Home = () => {
     navigate('/error')
   }
 
-  console.log(minDeviceWidth)
   console.log(maxDeviceWidth)
+  console.log(middlewidth)
 
-  if (minDeviceWidth && maxDeviceWidth && middlewidth) {
+  if (maxDeviceWidth && middlewidth) {
     return (
       <section className='home'>
       { !currentWeather && !forecast ? 

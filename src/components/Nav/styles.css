@@ -14,7 +14,7 @@
   }
 }
 
-@media screen and (min-device-width: 480px) and (min-device-width: 640px) and (max-width: 768px) {
+@media screen and (max-height: 575.98px) and (orientation: landscape) {
   .nav {
     height: 45px;
   }
