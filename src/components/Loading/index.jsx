@@ -12,10 +12,6 @@ export const Loading = () => {
   const myTimer = setTimeout(() => {
     setCounter(counter + 1)
   }, 1000)
-<<<<<<< HEAD
-
-=======
->>>>>>> css-landscape
   
   if (counter === 3) {
     clearTimeout(myTimer)
