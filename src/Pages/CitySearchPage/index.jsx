@@ -14,6 +14,8 @@ import { Nav } from  '../../components/Nav'
 import { NotFound } from '../../components/NotFound'
 import { Loading } from '../../components/Loading'
 
+import './style.css'
+
 export const CitySearchPage = () => {
   const navigate = useNavigate()
 
@@ -42,14 +44,18 @@ export const CitySearchPage = () => {
         <>
           <Nav />
           <NotFound />
-        </> : 
-        <>
+        </> :
+        <section className="city-search-container">
           <Nav />
-          <Title />
-          <MainImage />
-          <Details />
-          <Forecast />
-        </> }
+          <section className="content-container">
+            <section className='current-weather-section'>
+              <Title />
+              <MainImage />
+              <Details />
+          </section>
+          <Forecast className='forecast-component'/>
+          </section>
+        </section> }
       </section> }
     </section>
   )
