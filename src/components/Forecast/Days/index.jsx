@@ -8,7 +8,7 @@ export const Days = ({day}) => {
     <div className="div-days">
       <h3>{days[timeConverter(day.dt + 30000)].slice(0, 3)}</h3>
       <div className='div-img-forecast'>
-        <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt="Icon" />
+        <img src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt="Icon" />
       </div>
       <div className="left-details">
         <h4>{day.weather[0].main}</h4>

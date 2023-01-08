@@ -9,7 +9,7 @@ export const MainImage = () => {
 
   return (
     <div className="div-img">
-      <img src={`http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`} alt="Main Icon" />
+      <img src={`https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`} alt="Main Icon" />
     </div>
   )
 }

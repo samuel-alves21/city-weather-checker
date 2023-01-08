@@ -4,7 +4,7 @@ export const useFetchQueryPosition = (state, setPosition, key, setError, setNotF
   useEffect(() => {
     const exec = async() => {  
       try {
-        const data = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${state}&appid=${key}`)
+        const data = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${state}&appid=${key}`)
         const resolvedData = await data.json()
         console.log(resolvedData)
         console.log(state)
