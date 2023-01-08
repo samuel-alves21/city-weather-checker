@@ -19,3 +19,19 @@
 .emoji {
   color: #ff703d;
 }
+
+.error-page button {
+  font-size: 22px;
+  padding: 5px;
+  width: 273px;
+  background-color: #ff703d;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  transition: transform 0.05s;
+  cursor: pointer;
+}
+
+.error-page button:hover {
+  transform: scale(1.03);
+}

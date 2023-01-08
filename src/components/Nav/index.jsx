@@ -1,8 +1,8 @@
+import { useMediaQuery } from "react-responsive"
+
 import { TextInput } from "./TextInput"
 import { Logo } from "./Logo"
 import { Links } from "./Links"
-
-import { useMediaQuery } from "react-responsive"
 
 import './styles.css'
 

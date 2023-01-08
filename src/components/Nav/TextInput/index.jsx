@@ -1,5 +1,6 @@
 import { useContext, useRef, useState } from "react"
 import { useNavigate,} from "react-router-dom"
+
 import { CurrentWeatherContext } from "../../../contexts/CurrentWeatherContext"
 import { ForecastContext } from "../../../contexts/ForecastContext"
 
@@ -17,13 +18,12 @@ export const TextInput = () => {
 
   const { setCurrentWeather } = useContext(CurrentWeatherContext)
   const { setForecast } = useContext(ForecastContext)
-  
 
   const handleclick = () => {
     if (!inputValue) return
     setCurrentWeather(null)
     setForecast(null)
-
+    
     navigate(`/city/${inputValue}`, { state: inputValue })
     input.current.blur()
     

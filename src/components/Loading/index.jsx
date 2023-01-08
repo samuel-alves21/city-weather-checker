@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useState } from 'react'
+import { ColorRing } from 'react-loader-spinner'
+
 import { NotFound } from '../NotFound'
 import { Nav } from '../Nav'
-import { ColorRing } from 'react-loader-spinner'
 
 import './styles.css'
 
@@ -11,16 +12,13 @@ export const Loading = () => {
   const myTimer = setTimeout(() => {
     setCounter(counter + 1)
   }, 1000)
-
-
-  console.log(counter)
   
-  if (counter === 5) {
+  if (counter === 3) {
     clearTimeout(myTimer)
     return (
       <>
-      <Nav />
-      <NotFound />
+        <Nav />
+        <NotFound />
       </>
     )
   }

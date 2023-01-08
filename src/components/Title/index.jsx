@@ -10,7 +10,8 @@ export const Title = () => {
   return (
     <div className="title-container">
       <a
-      href={`https://www.google.com.br/maps/place/${currentWeather.name}`} target="_blank" rel="noreferrer"
+      href={`https://www.google.com.br/maps/place/${currentWeather.name}`} 
+      target="_blank" rel="noreferrer"
       className="title-link">
         <h2 className="title">{currentWeather.name}, {country}</h2>
       </a>

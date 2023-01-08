@@ -1,10 +1,14 @@
 import { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useMediaQuery } from 'react-responsive'
+
 import { CurrentWeatherContext } from '../../contexts/CurrentWeatherContext'
 import { ForecastContext } from '../../contexts/ForecastContext'
+
 import { useFetchData } from '../../hooks/useFetchData'
-import { key } from '../../data/apiKey'
 import { useFetchPosition } from '../../hooks/useFetchPosition'
-import { useNavigate } from 'react-router-dom'
+
+import { key } from '../../data/apiKey'
 
 import { Title } from '../../components/Title'
 import { MainImage } from '../../components/MainImage'
@@ -12,7 +16,6 @@ import { Details } from '../../components/Details'
 import { Forecast } from '../../components/Forecast'
 import { Nav } from  '../../components/Nav'
 import { Loading } from '../../components/Loading'
-import { useMediaQuery } from 'react-responsive'
 
 import './style.css'
 
@@ -29,47 +32,45 @@ export const Home = () => {
   const [ error, setError ] = useState(false)
 
   useFetchPosition(setPosition, setError)
-
   useFetchData(position, setCurrentWeather, setForecast, setError, key)
 
   if (error) {
     navigate('/error')
   }
 
-  console.log(maxDeviceWidth)
-  console.log(middlewidth)
-
   if (maxDeviceWidth && middlewidth) {
     return (
       <section className='home'>
       { !currentWeather && !forecast ? 
-      <Loading /> :
-      <section className='home-content'>
-        <Nav />
-        <section className="content-container">
-          <section className='current-weather-section'>
-            <Title />
-            <MainImage />
-            <Details />
+        <Loading /> 
+        :
+        <section className='home-content'>
+          <Nav />
+          <section className="content-container">
+            <section className='current-weather-section'>
+              <Title />
+              <MainImage />
+              <Details />
+            </section>
+            <Forecast className='forecast-component'/>
           </section>
-          <Forecast className='forecast-component'/>
-        </section>
-      </section> }
+        </section> }
     </section>
     )
   }
 
   return (
     <section className='home'>
-      { !currentWeather && !forecast ? 
-      <Loading /> :
-      <section className='home-content'>
-        <Nav />
-        <Title />
-        <MainImage />
-        <Details />
-        <Forecast />
-      </section> }
+      { !currentWeather && !forecast ?
+        <Loading />
+        :
+        <section className='home-content'>
+          <Nav />
+          <Title />
+          <MainImage />
+          <Details />
+          <Forecast />
+        </section> }
     </section>
   )
 }

@@ -1,10 +1,13 @@
 import { useContext, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+
 import { CurrentWeatherContext } from '../../contexts/CurrentWeatherContext'
 import { ForecastContext } from '../../contexts/ForecastContext'
+
 import { useFetchData } from '../../hooks/useFetchData'
-import { key } from '../../data/apiKey'
-import { useLocation, useNavigate } from 'react-router-dom'
 import { useFetchQueryPosition } from '../../hooks/useFetchQueryPosition'
+
+import { key } from '../../data/apiKey'
 
 import { Title } from '../../components/Title'
 import { MainImage } from '../../components/MainImage'
@@ -38,25 +41,27 @@ export const CitySearchPage = () => {
 
   return (
     <section className='main-container'>
-      { !currentWeather && !forecast ? <Loading /> : 
-      <section>
-        { notFound ? 
-        <>
-          <Nav />
-          <NotFound />
-        </> :
-        <section className="city-search-container">
-          <Nav />
-          <section className="content-container">
-            <section className='current-weather-section'>
-              <Title />
-              <MainImage />
-              <Details />
-          </section>
-          <Forecast className='forecast-component'/>
-          </section>
+      { !currentWeather && !forecast ? 
+        <Loading />
+        : 
+        <section>
+          { notFound ? 
+          <>
+            <Nav />
+            <NotFound />
+          </> :
+          <section className="city-search-container">
+            <Nav />
+            <section className="content-container">
+              <section className='current-weather-section'>
+                <Title />
+                <MainImage />
+                <Details />
+            </section>
+            <Forecast className='forecast-component'/>
+            </section>
+          </section> }
         </section> }
-      </section> }
     </section>
   )
 }

@@ -1,6 +1,8 @@
-import { getDate } from "../../functions/getDate"
 import { useContext } from "react"
+
 import { CurrentWeatherContext } from "../../contexts/CurrentWeatherContext"
+
+import { getDate } from "../../functions/getDate"
 
 import './styles.css'
 

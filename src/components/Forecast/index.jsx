@@ -1,5 +1,7 @@
 import { useContext } from "react"
+
 import { ForecastContext } from "../../contexts/ForecastContext"
+
 import { getForecastDays } from "../../functions/getForecastDays"
 import { Days } from "./Days"
 

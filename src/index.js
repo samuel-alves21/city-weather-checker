@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CurrentWeatherProvider>
     <ForecastProvider>
-        <App />
+      <App />
     </ForecastProvider>
   </CurrentWeatherProvider>
 );

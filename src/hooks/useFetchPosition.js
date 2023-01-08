@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-export const useFetchPosition = (setPosition, setError) => {
+export const useFetchPosition = (setPosition, setError, state) => {
   useEffect(() => { 
     const success = (position) => {
       setPosition({
@@ -12,7 +12,7 @@ export const useFetchPosition = (setPosition, setError) => {
       console.log(e)
       setError(true)
     }
-
+    
     navigator.geolocation.watchPosition(success, error)
-  }, [ setPosition, setError ])
+  }, [ setPosition, setError, state ])
 }
