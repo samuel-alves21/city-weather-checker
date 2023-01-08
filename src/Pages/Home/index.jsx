@@ -36,9 +36,6 @@ export const Home = () => {
     navigate('/error')
   }
 
-  console.log(maxDeviceWidth)
-  console.log(middlewidth)
-
   if (maxDeviceWidth && middlewidth) {
     return (
       <section className='home'>

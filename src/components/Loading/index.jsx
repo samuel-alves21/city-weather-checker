@@ -12,8 +12,6 @@ export const Loading = () => {
     setCounter(counter + 1)
   }, 1000)
 
-
-  console.log(counter)
   
   if (counter === 5) {
     clearTimeout(myTimer)
