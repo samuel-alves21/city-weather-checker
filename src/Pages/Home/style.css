@@ -1,0 +1,7 @@
+@media screen and (min-device-width: 480px) and (min-device-width: 640px) and (max-width: 768px) {
+  .content-container {
+    display: flex;
+    margin: auto;
+    width: 80vw;
+  }
+}
