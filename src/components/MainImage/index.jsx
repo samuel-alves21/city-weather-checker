@@ -1,4 +1,5 @@
 import { useContext } from "react"
+
 import { CurrentWeatherContext } from "../../contexts/CurrentWeatherContext"
 
 import './styles.css'

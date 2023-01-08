@@ -1,5 +1,5 @@
 .input-container {
-  margin-left: 30px;
+  margin-left: 15px;
   display: flex;
   flex-grow: 1;
   align-items: center;
@@ -10,7 +10,7 @@
 }
 
 .input-container * {
-  height: 70%;
+  height: 100%;
 }
 
 .input-container input {
