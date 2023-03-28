@@ -1,6 +1,6 @@
 import { key } from '../data/apiKey'
 
-export const getCurrentLocationWeather = async (position) => {
+export const getCurrentLocationWeather = async (position, setWeather) => {
   const { lat, lon } = position
   try {
     const currentWeatherData = await fetch(
@@ -14,6 +14,7 @@ export const getCurrentLocationWeather = async (position) => {
     const resolveCurrentWeatherData = await currentWeatherData.json()
     const resolveForecastData = await forecastData.json()
     console.log(resolveCurrentWeatherData, resolveForecastData)
+    setWeather(resolveCurrentWeatherData)
   } catch (e) {
     console.log(e)
   }
