@@ -1,7 +1,0 @@
-@media screen and (max-height: 575.98px) and (orientation: landscape) {
-  .content-container {
-    display: flex;
-    margin: auto;
-    width: 80vw;
-  }
-}
