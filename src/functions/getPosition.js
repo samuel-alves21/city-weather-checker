@@ -9,6 +9,6 @@ export const getPosition = new Promise((resolve, reject) => {
 
   navigator.geolocation.getCurrentPosition(success, error, {
     maximumAge: 300000,
-    timeout: 15000,
+    timeout: 25000,
   })
 })

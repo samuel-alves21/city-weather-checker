@@ -12,7 +12,6 @@ export const MainStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-
   :root {
     --std-responsive-param: 0.390625vw;
     --headlines-size: calc(50px + var(--std-responsive-param));
