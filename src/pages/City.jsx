@@ -2,35 +2,32 @@ import styled from 'styled-components'
 import { useContext, useEffect } from 'react'
 import { NavBar } from '../components/NavBar'
 import { getWeather } from '../functions/getWeather'
-import { getPosition } from '../functions/getPosition'
 import { WeatherContext } from '../context/WeatherContext'
 import { Loader } from '../components/Loader'
 import { Content } from '../components/Content'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { ErrorContext } from '../context/ErrorContext'
+import { getCityLocation } from '../functions/getCityLocation'
 
-export const Home = () => {
+export const City = () => {
   const { weather, setWeather } = useContext(WeatherContext)
   const { error, setError } = useContext(ErrorContext)
+  const { name } = useParams()
   const navigate = useNavigate()
+
   useEffect(() => {
+    const fetchData = async () => {
+      const position = await getCityLocation(name, setError)
+      getWeather(position, setWeather, setError)
+    }
+
     if (error.hasError) {
       navigate('/error')
     } else {
-      getPosition()
-        .then(
-          async (resolve) => await getWeather(resolve, setWeather, setError)
-        )
-        .catch((error) => {
-          console.log(error)
-          setError({
-            hasError: true,
-            errorDescription: 'position error',
-          })
-        })
+      fetchData()
     }
-  }, [setWeather, navigate, setError, error.hasError])
-
+  }, [setWeather, navigate, setError, error.hasError, name])
+  console.log(weather)
   return (
     <HomeWrapper>
       <NavBar />

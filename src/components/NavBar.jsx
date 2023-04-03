@@ -19,7 +19,7 @@ export const NavBar = () => {
 }
 
 const NavBarWrapper = styled.nav`
-  height: var(--headlines-size);
+  min-height: var(--headlines-size);
   background-color: var(--color-primary);
   padding: var(--headline-padding);
 

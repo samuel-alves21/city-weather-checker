@@ -1,4 +1,4 @@
 export const breakpoints = {
-  midScreen: '640px',
-  smallScreen: '530px',
+  midScreen: '768px',
+  smallScreen: '576px',
 }

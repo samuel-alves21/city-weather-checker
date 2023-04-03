@@ -1,6 +1,6 @@
 {
   "name": "weather-app",
-  "homepage": "/",
+  "homepage": "http://samuel-alves21.github.io/weather-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,10 +8,10 @@
     "pettier": "^1.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-loader-spinner": "^5.3.4",
     "react-responsive": "^9.0.2",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
+    "react-loader-spinner": "^5.3.4",
     "styled-components": "^5.3.9"
   },
   "scripts": {

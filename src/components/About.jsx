@@ -6,6 +6,7 @@ export const About = () => {
   const isSmallScreen = useMediaQuery({
     query: `(max-width: ${breakpoints.smallScreen})`,
   })
+  
   return (
     <AboutWrapper>
       <i className='bi bi-github'></i>
@@ -31,7 +32,11 @@ const AboutWrapper = styled.div`
 
   & .bi-github,
   & .bi-instagram {
-    font-size: calc(20px + var(--std-responsive-param));
+    font-size: calc(15px + var(--std-responsive-param));
+  }
+
+  & a {
+    font-size: calc(12px + var(--std-responsive-param));
   }
 
   @media (max-width: ${breakpoints.smallScreen}) {
