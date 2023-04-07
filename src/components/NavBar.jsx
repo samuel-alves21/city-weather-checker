@@ -5,14 +5,14 @@ import { Logo } from './Logo'
 import { SearchField } from './SearchField'
 import { breakpoints } from '../breakpoints'
 
-export const NavBar = () => {
+export const NavBar = ({citySearched}) => {
   const isMidScreen = useMediaQuery({
     query: `(max-width: ${breakpoints.midScreen})`,
   })
   return (
     <NavBarWrapper>
       {isMidScreen || <Logo />}
-      <SearchField />
+      <SearchField citySearched={citySearched}/>
       <About />
     </NavBarWrapper>
   )

@@ -7,21 +7,21 @@ const clearText = (input) => {
   input.current.value = ''
 }
 
-const handleKeyDown = (e, navigate, setWeather) => {
-  if (e.key === 'Enter' && e.target.value !== '') {
+const handleKeyDown = (e, navigate, setWeather, citySearched) => {
+  if (e.key === 'Enter' && e.target.value !== '' && e.target.value !== citySearched) {
     setWeather('')
     navigate(`/city/${e.target.value}`)
   }
 }
 
-const handleClick = (input, navigate, setWeather) => {
-  if (input.current.value !== '') {
+const handleClick = (input, navigate, setWeather, citySearched) => {
+  if (input.current.value !== '' && input.current.value !== citySearched) {
     setWeather('')
     navigate(`/city/${input.current.value}`)
   }
 }
 
-export const SearchField = () => {
+export const SearchField = ({citySearched}) => {
   const input = useRef()
   const navigate = useNavigate()
   const { setWeather } = useContext(WeatherContext)
@@ -31,13 +31,13 @@ export const SearchField = () => {
         type='text'
         placeholder='type the city name'
         ref={input}
-        onKeyDown={(e) => handleKeyDown(e, navigate, setWeather)}
+        onKeyDown={(e) => handleKeyDown(e, navigate, setWeather, citySearched)}
       />
       <ClearText onClick={() => clearText(input)}>
         <i className='bi bi-x'></i>
       </ClearText>
       <Search>
-        <i className='bi bi-search' onClick={() => handleClick(input, navigate, setWeather)}></i>
+        <i className='bi bi-search' onClick={() => handleClick(input, navigate, setWeather, citySearched)}></i>
       </Search>
     </SearchFieldWraper>
   )

@@ -27,10 +27,10 @@ export const City = () => {
       fetchData()
     }
   }, [setWeather, navigate, setError, error.hasError, name])
-  console.log(weather)
+
   return (
     <HomeWrapper>
-      <NavBar />
+      <NavBar citySearched={name} />
       {weather ? <Content /> : <Loader />}
     </HomeWrapper>
   )
