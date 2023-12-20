@@ -1,6 +1,6 @@
 {
-  "name": "weather-app",
-  "homepage": "http://samuel-alves21.github.io/weather-app/",
+  "name": "city-weather-checker",
+  "homepage": "http://samuel-alves21.github.io/city-weather-checker/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
