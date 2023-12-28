@@ -39,5 +39,5 @@ export const City = () => {
 const HomeWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  min-height: var(--height-full);
+  padding-bottom: 20px;
 `

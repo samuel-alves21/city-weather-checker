@@ -40,7 +40,7 @@ export const Home = () => {
 }
 
 const HomeWrapper = styled.section`
-  display: flex;
+  display: flex;  
   flex-direction: column;
-  min-height: var(--height-full);
+  padding-bottom: 20px;
 `

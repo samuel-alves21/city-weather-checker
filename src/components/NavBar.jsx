@@ -5,14 +5,14 @@ import { Logo } from './Logo'
 import { SearchField } from './SearchField'
 import { breakpoints } from '../breakpoints'
 
-export const NavBar = ({citySearched}) => {
+export const NavBar = ({ citySearched }) => {
   const isMidScreen = useMediaQuery({
     query: `(max-width: ${breakpoints.midScreen})`,
   })
   return (
-    <NavBarWrapper>
+    <NavBarWrapper $isMidScreen={isMidScreen}>
       {isMidScreen || <Logo />}
-      <SearchField citySearched={citySearched}/>
+      <SearchField citySearched={citySearched} />
       <About />
     </NavBarWrapper>
   )
@@ -22,13 +22,17 @@ const NavBarWrapper = styled.nav`
   min-height: var(--headlines-size);
   background-color: var(--color-primary);
   padding: var(--headline-padding);
-
+  width: 100%;
   display: flex;
   align-items: center;
   gap: calc(20px + var(--std-responsive-param));
   justify-content: space-between;
 
   color: white;
+
+  & > :first-child, & > :last-child {
+    ${({$isMidScreen}) => !$isMidScreen && 'width: 300px !important'};
+  }
 
   @media (max-width: ${breakpoints.midScreen}) {
     padding: 0 2.5vw;

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { days } from '../data/date'
 import { timeConverter } from '../functions/timeConverter'
-import { Img } from './Img'
 import { breakpoints } from '../breakpoints'
 
 export const ForecastDays = ({ day }) => {
@@ -9,7 +8,7 @@ export const ForecastDays = ({ day }) => {
     <ForecastDaysWrapper>
       <h3>{days[timeConverter(day.dt + 30000)].slice(0, 3)}</h3>
       <ImgWrapper>
-        <Img
+        <img
           src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
           alt='Icon'
         />
@@ -26,7 +25,11 @@ const ForecastDaysWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  gap: 10px;
+
+  & > :first-child, & > :last-child {
+    width: 80px;
+  }
 
   @media (max-width: ${breakpoints.midScreen}) {
     flex-direction: row;
@@ -39,5 +42,14 @@ const WeatherMain = styled.h4`
 `
 
 const ImgWrapper = styled.div`
-  min-width: 100px;
+
+  width: 80px;
+
+  @media (max-width: ${breakpoints.midScreen}) {
+    & img {
+      width: 60px;
+    }
+  }
+
+  flex-grow: 1;
 `

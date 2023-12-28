@@ -2,13 +2,19 @@ import { useContext, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { WeatherContext } from '../context/WeatherContext'
+import { breakpoints } from '../breakpoints'
+import { useMediaQuery } from 'react-responsive'
 
 const clearText = (input) => {
   input.current.value = ''
 }
 
 const handleKeyDown = (e, navigate, setWeather, citySearched) => {
-  if (e.key === 'Enter' && e.target.value !== '' && e.target.value !== citySearched) {
+  if (
+    e.key === 'Enter' &&
+    e.target.value !== '' &&
+    e.target.value !== citySearched
+  ) {
     setWeather('')
     navigate(`/city/${e.target.value}`)
   }
@@ -21,12 +27,17 @@ const handleClick = (input, navigate, setWeather, citySearched) => {
   }
 }
 
-export const SearchField = ({citySearched}) => {
+export const SearchField = ({ citySearched }) => {
   const input = useRef()
   const navigate = useNavigate()
   const { setWeather } = useContext(WeatherContext)
+
+  const isMidScreen = useMediaQuery({
+    query: `(max-width: ${breakpoints.midScreen})`,
+  })
+
   return (
-    <SearchFieldWraper>
+    <SearchFieldWraper $isMidScreen={isMidScreen}>
       <Input
         type='text'
         placeholder='type the city name'
@@ -37,16 +48,19 @@ export const SearchField = ({citySearched}) => {
         <i className='bi bi-x'></i>
       </ClearText>
       <Search>
-        <i className='bi bi-search' onClick={() => handleClick(input, navigate, setWeather, citySearched)}></i>
+        <i
+          className='bi bi-search'
+          onClick={() => handleClick(input, navigate, setWeather, citySearched)}
+        ></i>
       </Search>
     </SearchFieldWraper>
   )
 }
 
 const SearchFieldWraper = styled.div`
-  height: calc(20px + var(--std-responsive-param));
-  flex-grow: 1;
-
+  height: calc(22px + var(--std-responsive-param));
+  width: ${({$isMidScreen}) => $isMidScreen ? '100%' : '40%'};
+  margin: 0 auto;
   display: flex;
 
   & > * {
@@ -55,8 +69,8 @@ const SearchFieldWraper = styled.div`
 `
 
 const Input = styled.input`
+  width: 100%;
   border-radius: 1.5px 0 0 1.5px;
-  flex-grow: 1;
   border: none;
   outline: none;
   padding: 2px 15px;
@@ -88,6 +102,7 @@ const ClearText = styled.div`
 const Search = styled(ClearText)`
   border-radius: 0 1.5px 1.5px 0;
   background-color: var(--color-secundary-light);
+  transition: background-color 0.5s;
   color: white;
   &:hover {
     cursor: pointer;

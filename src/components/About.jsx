@@ -6,13 +6,27 @@ export const About = () => {
   const isSmallScreen = useMediaQuery({
     query: `(max-width: ${breakpoints.smallScreen})`,
   })
-  
+
   return (
     <AboutWrapper>
-      <i className='bi bi-github'></i>
-      <i className='bi bi-instagram'></i>
+      <a
+        href='https://github.com/samuel-alves21'
+        target='_blank'
+        rel='noreferrer'
+      >
+        <i className='bi bi-github'></i>
+      </a>
+      <a
+        href='https://www.instagram.com/samuel_alves.21/'
+        target='_blank'
+        rel='noreferrer'
+      >
+        <i className='bi bi-instagram'></i>
+      </a>
       {isSmallScreen || (
-        <a href='https://openweathermap.org/'>Open Weather API</a>
+        <a href='https://openweathermap.org/' target='_blank' rel='noreferrer'>
+          Open Weather API
+        </a>
       )}
     </AboutWrapper>
   )
@@ -20,19 +34,23 @@ export const About = () => {
 
 const AboutWrapper = styled.div`
   height: 100%;
-
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 15px;
   text-align: center;
+  justify-content: end;
+  width: 270px;
+  font-size: calc(15px + var(--std-responsive-param));
 
-  & > *:not(:last-child) {
-    margin-right: 10px;
+  & * {
+    transition: color 0.5s;
   }
 
-  & .bi-github,
-  & .bi-instagram {
-    font-size: calc(15px + var(--std-responsive-param));
+  & .bi-github:hover,
+  & .bi-instagram:hover,
+  & a:hover {
+    color: var(--color-secundary-lighter);
+    cursor: pointer;
   }
 
   & a {

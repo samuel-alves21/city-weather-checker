@@ -8,7 +8,7 @@ import { breakpoints } from '../breakpoints'
 export const Forecast = () => {
   const { weather } = useContext(WeatherContext)
   const forecastDays = getForecastDays(weather.forecast)
-  
+
   return (
     <ForecastWrapper className='forecast-section'>
       {forecastDays.map((day, index) => (
@@ -26,5 +26,6 @@ const ForecastWrapper = styled.div`
 
   @media (max-width: ${breakpoints.midScreen}) {
     flex-direction: column;
+    gap: 5px;
   }
 `
