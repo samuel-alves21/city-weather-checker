@@ -6,7 +6,7 @@ const app = express()
 
 app.use(cors({
   // origin: 'http://localhost:3000',
-  origin: 'https://samuel-alves21.github.io/city-weather-checker',
+  origin: 'https://samuel-alves21.github.io',
 }))
 
 app.get('/weather/current/:lat/:lon', async (req, res) => {
