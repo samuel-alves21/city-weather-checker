@@ -3,8 +3,8 @@ import logo from '../img/weather-app-logo.png'
 
 export const Logo = () => {
   return (
-    <a href='/'>
-      <LogoWrapper onClick={() => window.location = '/'}>
+    <a href='/city-weather-checker'>
+      <LogoWrapper onClick={() => window.location = '/city-weather-checker'}>
         <img src={logo} alt="Logo's app" />
       </LogoWrapper>
     </a>
