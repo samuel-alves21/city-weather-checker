@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { days } from '../data/date'
+import { days } from '../utils/date'
 import { timeConverter } from '../functions/timeConverter'
 import { breakpoints } from '../breakpoints'
 

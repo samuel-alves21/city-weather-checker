@@ -4,54 +4,47 @@ import styled from 'styled-components'
 import { WeatherContext } from '../context/WeatherContext'
 import { breakpoints } from '../breakpoints'
 import { useMediaQuery } from 'react-responsive'
-
-const clearText = (input) => {
-  input.current.value = ''
-}
-
-const handleKeyDown = (e, navigate, setWeather, citySearched) => {
-  if (
-    e.key === 'Enter' &&
-    e.target.value !== '' &&
-    e.target.value !== citySearched
-  ) {
-    setWeather('')
-    navigate(`/city/${e.target.value}`)
-  }
-}
-
-const handleClick = (input, navigate, setWeather, citySearched) => {
-  if (input.current.value !== '' && input.current.value !== citySearched) {
-    setWeather('')
-    navigate(`/city/${input.current.value}`)
-  }
-}
+import { ErrorContext } from '../context/ErrorContext'
 
 export const SearchField = ({ citySearched }) => {
   const input = useRef()
   const navigate = useNavigate()
   const { setWeather } = useContext(WeatherContext)
+  const { setError } = useContext(ErrorContext)
 
   const isMidScreen = useMediaQuery({
     query: `(max-width: ${breakpoints.midScreen})`,
   })
 
+  const search = () => {
+    if (input.current.value !== '' && input.current.value !== citySearched) {
+      setWeather('')
+      setError({
+        hasError: false,
+        errorDescription: '',
+      })
+      navigate(`/city/${input.current.value}`)
+    }
+  }
+
+  const clearText = () => {
+    input.current.value = ''
+  }
+  
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      search()
+    }
+  }
+  
   return (
     <SearchFieldWraper $isMidScreen={isMidScreen}>
-      <Input
-        type='text'
-        placeholder='type the city name'
-        ref={input}
-        onKeyDown={(e) => handleKeyDown(e, navigate, setWeather, citySearched)}
-      />
+      <Input type='text' placeholder='type the city name' ref={input} onKeyDown={(e) => handleKeyDown(e)}/>
       <ClearText onClick={() => clearText(input)}>
         <i className='bi bi-x'></i>
       </ClearText>
       <Search>
-        <i
-          className='bi bi-search'
-          onClick={() => handleClick(input, navigate, setWeather, citySearched)}
-        ></i>
+        <i className='bi bi-search'onClick={search}></i>
       </Search>
     </SearchFieldWraper>
   )

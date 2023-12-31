@@ -1,4 +1,4 @@
-export const getPosition = () =>
+export const getCurrentPosition = () =>
   new Promise((resolve, reject) => {
     const success = (position) => {
       resolve({ lat: position.coords.latitude, lon: position.coords.longitude })

@@ -1,4 +1,4 @@
-import { days, months } from '../data/date'
+import { days, months } from '../utils/date'
 
 export const getDate = () => {
   const date = new Date()

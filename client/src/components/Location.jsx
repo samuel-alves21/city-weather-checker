@@ -11,8 +11,8 @@ export const Location = () => {
   return (
     <LocationName>
       <Title
-        href={`https://www.google.com.br/maps/place/${weather.currentWeather.name}`}
-        target='_blank'
+      href={`https://www.google.com.br/maps/place/${weather.currentWeather.name}`}
+      target='_blank'
       >
         {weather.currentWeather.name},{' '}
         {getCountryName(weather.currentWeather.sys.country)}
@@ -47,6 +47,6 @@ const ImgWrapper = styled.div`
   width: calc(1.5vw + 100px);
 
   @media (max-width: ${breakpoints.midScreen}) {
-    width: calc(0.5vw + 50px);
+    width: calc(0.7vw + 50px);
   }
 `

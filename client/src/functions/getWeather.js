@@ -1,26 +1,30 @@
-import { key } from '../data/apiKey'
+import { baseUrl } from '../utils/api'
 
 export const getWeather = async (position, setWeather, setError) => {
   const { lat, lon } = position
   try {
-    const currentWeather = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`
-    ).then((resolve) => resolve.json())
-
-    const forecast = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=metric`
-    ).then((resolve) => resolve.json())
-
-    setError({
-      hasError: false,
-      errorDescription: '',
-    })
-    setWeather({ currentWeather, forecast })
+    const currentWeatherResponse = await fetch(`${baseUrl}/weather/current/${lat}/${lon}`)
+    const forecastResponse = await fetch(`${baseUrl}/weather/forecast/${lat}/${lon}`)
+    if (!currentWeatherResponse.ok || !forecastResponse.ok) {
+      setError({
+        hasError: true,
+        errorDescription: 'weather error',
+      })
+    } else {
+      const currentWeather = await currentWeatherResponse.json()
+      const forecast = await forecastResponse.json()
+  
+      setError({
+        hasError: false,
+        errorDescription: '',
+      })
+      setWeather({ currentWeather, forecast })
+    }
   } catch (e) {
     console.log(e)
     setError({
       hasError: true,
-      errorDescription: 'weather error',
+      errorDescription: 'server error',
     })
   }
 }
