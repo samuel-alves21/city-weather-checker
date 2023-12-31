@@ -17,11 +17,11 @@ export const About = () => {
         <i className='bi bi-github'></i>
       </a>
       <a
-        href='https://www.instagram.com/samuel_alves.21/'
+        href='https://www.linkedin.com/in/samuel-theodoro'
         target='_blank'
         rel='noreferrer'
       >
-        <i className='bi bi-instagram'></i>
+        <i className='bi bi-linkedin'></i>
       </a>
       {isSmallScreen || (
         <a href='https://openweathermap.org/' target='_blank' rel='noreferrer'>

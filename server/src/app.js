@@ -5,8 +5,7 @@ require('dotenv').config()
 const app = express()
 
 app.use(cors({
-  // origin: 'http://localhost:3000',
-  origin: 'https://samuel-alves21.github.io',
+  origin: ['https://samuel-alves21.github.io', 'http://localhost:3000'],
 }))
 
 app.get('/weather/current/:lat/:lon', async (req, res) => {
