@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/city-weather-checker/static/js/main.2c5a36b6.js",
+    "main.js": "/city-weather-checker/static/js/main.b4899352.js",
     "static/media/weather-app-logo.png": "/city-weather-checker/static/media/weather-app-logo.7f36128aa5b9276d7278.png",
     "static/media/storm.png": "/city-weather-checker/static/media/storm.34ba1304792a31b7d163.png",
     "index.html": "/city-weather-checker/index.html",
-    "main.2c5a36b6.js.map": "/city-weather-checker/static/js/main.2c5a36b6.js.map"
+    "main.b4899352.js.map": "/city-weather-checker/static/js/main.b4899352.js.map"
   },
   "entrypoints": [
-    "static/js/main.2c5a36b6.js"
+    "static/js/main.b4899352.js"
   ]
 }
