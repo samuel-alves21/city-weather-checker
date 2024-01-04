@@ -6,12 +6,12 @@ import { SearchField } from './SearchField'
 import { breakpoints } from '../breakpoints'
 
 export const NavBar = ({ citySearched }) => {
-  const isMidScreen = useMediaQuery({
-    query: `(max-width: ${breakpoints.midScreen})`,
+  const islargeScreen = useMediaQuery({
+    query: `(max-width: ${breakpoints.largeScreen})`,
   })
   return (
-    <NavBarWrapper $isMidScreen={isMidScreen}>
-      {isMidScreen || <Logo />}
+    <NavBarWrapper $islargeScreen={islargeScreen}>
+      {islargeScreen || <Logo />}
       <SearchField citySearched={citySearched} />
       <About />
     </NavBarWrapper>
@@ -31,10 +31,10 @@ const NavBarWrapper = styled.nav`
   color: white;
 
   & > :first-child, & > :last-child {
-    ${({$isMidScreen}) => !$isMidScreen && 'width: 300px !important'};
+    ${({$islargeScreen}) => !$islargeScreen && 'width: 400px !important'};
   }
 
-  @media (max-width: ${breakpoints.midScreen}) {
+  @media (max-width: ${breakpoints.largeScreen}) {
     padding: 0 2.5vw;
   }
 `

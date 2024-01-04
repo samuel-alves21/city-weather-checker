@@ -40,6 +40,8 @@ export const MainStyle = createGlobalStyle`
 
   body {
     font-family: 'Space Grotesk', sans-serif;
+    max-width: 2000px;
+    margin: 0 auto;
   }
 
   a {

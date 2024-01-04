@@ -9,18 +9,10 @@ export const About = () => {
 
   return (
     <AboutWrapper>
-      <a
-        href='https://github.com/samuel-alves21'
-        target='_blank'
-        rel='noreferrer'
-      >
+      <a href='https://github.com/samuel-alves21'target='_blank'rel='noreferrer'>
         <i className='bi bi-github'></i>
       </a>
-      <a
-        href='https://www.linkedin.com/in/samuel-theodoro'
-        target='_blank'
-        rel='noreferrer'
-      >
+      <a href='https://www.linkedin.com/in/samuel-theodoro'target='_blank'rel='noreferrer'>
         <i className='bi bi-linkedin'></i>
       </a>
       {isSmallScreen || (
@@ -54,7 +46,7 @@ const AboutWrapper = styled.div`
   }
 
   & a {
-    font-size: calc(12px + var(--std-responsive-param));
+    font-size: calc(16px + var(--std-responsive-param));
   }
 
   @media (max-width: ${breakpoints.smallScreen}) {
