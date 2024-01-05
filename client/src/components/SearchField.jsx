@@ -69,7 +69,7 @@ const Input = styled.input`
   padding: 2px 15px;
   font-size: calc(12px + var(--std-responsive-param));
   font-weight: lighter;
-  color: var(--color-secundary);
+  color: #000;
 `
 
 const ClearText = styled.div`
